@@ -1,0 +1,17 @@
+package DS;
+
+public abstract class Compte {
+    protected String nom;
+    protected String prenom;
+    protected String email;
+    protected String mdp;
+    public Compte(String nom,String prenom, String email,String mdp) {
+        this.nom= nom;
+        this.prenom= prenom;
+        this.email= email;
+        this.mdp= mdp;
+    }
+
+    public abstract void afficherDetails();
+
+    public void seConnecter() ;
