@@ -1,0 +1,42 @@
+import Createur;
+import Entreprise;
+
+import java.util*;
+
+public class GestionUGC {
+    private ArrayList<Createur> createurs = new ArrayList<>();
+    private ArrayList<Entreprise> entreprises = new ArrayList<>();
+
+    public void ajouterCreateur(Createur createur) {
+        createurs.add(createur);
+    }
+
+    public void ajouterEntreprise(Entreprise entreprise) {
+        entreprises.add(entreprise);
+    }
+
+    public void afficherCreateurs() {
+        System.out.println("\n=== Liste des Créateurs ===");
+        for (int i = 0; i < createurs.size(); i++) {
+            System.out.println((i + 1) + ". " + createurs.get(i).nom + " - " + createurs.get(i).getSpecialite());
+        }
+    }
+
+    public void afficherEntreprises() {
+        System.out.println("\n=== Liste des Entreprises ===");
+        for (int i = 0; i < entreprises.size(); i++) {
+            System.out.println((i + 1) + ". " + entreprises.get(i).nom + " - " + entreprises.get(i).getDomaine());
+        }
+    }
+
+    public void simulerCollaboration(int indexCreateur, int indexEntreprise) {
+        if (indexCreateur < createurs.size() && indexEntreprise < entreprises.size()) {
+            Createur createur = createurs.get(indexCreateur);
+            Entreprise entreprise = entreprises.get(indexEntreprise);
+            System.out.println("Collaboration entre " + createur.nom + " (spécialité : " + createur.getSpecialite() + ") et "
+                    + entreprise.nom + " (domaine : " + entreprise.getDomaine() + ").");
+        } else {
+            System.out.println("Indices invalides pour la collaboration.");
+        }
+    }
+}
