@@ -1,0 +1,17 @@
+public class Entreprise extends Compte {
+    private String domaine;
+
+    public Entreprise(String nom, String email, String mdp, String domaine) {
+        super(nom, email, mdp);
+        this.domaine = domaine;
+    }
+
+    @Override
+    public void afficherDetails() {
+        System.out.println("Entreprise : " + nom + ", Domaine : " + domaine);
+    }
+
+    public String getDomaine() {
+        return domaine;
+    }
+}
