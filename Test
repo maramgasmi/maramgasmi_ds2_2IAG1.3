@@ -1,0 +1,25 @@
+package Test;
+
+import Createur;
+import Entreprise;
+import GestionUGC;
+
+public class Main {
+    public static void main(String[] args) {
+        GestionUGC gestion = new GestionUGC();
+
+        // Ajouter des créateurs et deq entreprises
+        gestion.ajouterCreateur(new Createur("Maram", "maram@ugc.com", "Photographie"));
+        gestion.ajouterCreateur(new Createur("Ahmed", "ahmed@ugc.com", "Graphisme"));
+        gestion.ajouterEntreprise(new Entreprise("Studio Pro", "contact@studiopro.com", "Production Vidéo"));
+        gestion.ajouterEntreprise(new Entreprise("Design Co.", "contact@designco.com", "Design"));
+
+        // Afficher les données
+        gestion.afficherCreateurs();
+        gestion.afficherEntreprises();
+
+        // Simuler une collaboration
+        System.out.println("\n=== Simulation de Collaboration ===");
+        gestion.simulerCollaboration(0, 1); // Collaboration entre Maram et Design Co.
+    }
+}
